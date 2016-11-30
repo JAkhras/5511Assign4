@@ -4,7 +4,7 @@ package bm.assign4.comp5511;
 
 public class BMPattern {
     String[] ref_file =       {"a","b","b","b","a"};
-    String[] inputPattern   = {"b","b","a"};
+    String[] inputPattern   = {"b","a","b"};
     int arraysize = ref_file.length;
     public static int indexx;
     public static int compare=0;
