@@ -11,7 +11,7 @@ public class BM_matching {
     int TStart;
     int BStart;
     int[] last = new int[126];
-    public static int compare = 0;
+    int compare = 0;
     int index = 0;
 
     public BM_matching(String ref_file, String inputPattern) {
