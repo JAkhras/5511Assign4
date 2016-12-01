@@ -3,8 +3,8 @@ package bm.assign4.comp5511;
 
 
 public class BMPattern {
-    String[] ref_file =       {"a","b","a","b","a","a","c"};
-    String[] inputPattern   =                 {"a","c"};
+    String[] ref_file =      {"a","b","a","c","a","a","b","a","d","c","a","b","a","c","a","b","a","a","b","b"};
+    String[] inputPattern   = {"a","b","a","c","a","b"};
     int[] last = new int[26];
     public static int compare=0;
     int TStart = inputPattern.length-1;
@@ -157,7 +157,7 @@ public class BMPattern {
            }
            else{index = index + inputPattern.length - 1-i;}
                   
-             if((index+BStart+2) > ref_file.length){
+             if((index+BStart+2) >= ref_file.length){
              System.out.println("No match!");
              System.out.println("Number of comparisions are: "+ compare + "    ");
              return;

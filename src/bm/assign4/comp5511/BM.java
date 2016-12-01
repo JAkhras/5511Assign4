@@ -7,7 +7,9 @@ public class BM {
     
     public static void main(String[] args) {
     BMPattern call = new BMPattern();
+    call.BMPatternAnalyst();
     call.CallBM();
+    
 
     }
     
