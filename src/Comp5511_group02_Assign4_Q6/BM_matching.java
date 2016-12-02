@@ -22,6 +22,8 @@ public class BM_matching {
     }
     
     public void BMPatternAnalyst(String pattern) {
+        for(int r=0; r<last.length;r++)
+         {last[r]=-1;}
        
         String inputPatternAnalysis = pattern;
         // first we have to define last[]
@@ -138,7 +140,9 @@ public class BM_matching {
                    case ')':
                         last[33] = inputPatternAnalysis.length() - x;
                         break;     
-                        
+                     case ' ':
+                        last[34] = inputPatternAnalysis.length() - x;
+                        break;         
                 }
             }
         }
@@ -148,7 +152,7 @@ public class BM_matching {
         //Match
         if (ref_file.charAt(TStart + index)==inputPattern.charAt(BStart)) {
             compare++; 
-            if (BStart == 0)//Last match
+            if (BStart <= 0)//Last match
             {
                 System.out.println("Using BM Pattern:");
                 System.out.println("Index is found at: " + index + "    ");
@@ -265,9 +269,12 @@ public class BM_matching {
                    case ')':
                        i =  last[33];
                         break; 
+                    case ' ':
+                       i =  last[34];
+                        break; 
             }
 
-            if (i == 0) {
+            if (i == -1) {
                 index = index + BStart + 1;
             } 
              else{
@@ -277,7 +284,7 @@ public class BM_matching {
             
            }
 
-            if ((index + BStart + 1) >= (ref_file.length()-1)) {
+            if ((index + TStart) > (ref_file.length()-1)) {
                 System.out.println("No match!");
                 System.out.println("Number of comparisions are: " + compare + "    ");
                 //return;
